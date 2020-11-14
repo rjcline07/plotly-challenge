@@ -83,7 +83,7 @@ function bubblechart(id) {
         }
     }];
     
-
+    //layout
     var layout2 = {
         title: 'Bacterial Cultures per Sample',
         xaxis: {title: "OTU ID"},
