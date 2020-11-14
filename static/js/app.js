@@ -62,6 +62,38 @@ function barchart(id) {
     Plotly.newPlot('bar', trace1, layout1)
 };
 
+//bubblechart
+function bubblechart(id) {
+    var bubblesample = jsonData.samples.filter(x => x.id.toString() === id)[0];
+    //create a variable for the OTU ids, values and sample labels like above
+    var otuIDs = bubblesample.otu_ids
+    var bubblevalues = bubblesample.sample_values
+    var bubblelabels = bubblesample.otu_labels
+
+    //trace
+    var trace2 = [{
+        x: otuIDs,
+        y: bubblevalues,
+        text: bubblelabels,
+        mode: 'markers',
+        marker: {
+            color: otuIDs,
+            size: bubblevalues,
+            colorscale: 'Viridis'
+        }
+    }];
+    
+
+    var layout2 = {
+        title: 'Bacterial Cultures per Sample',
+        xaxis: {title: "OTU ID"},
+        yaxis: {title: "Sample Values"},
+
+    };
+
+    Plotly.newPlot('bubble', trace2, layout2);
+
+};
 
 
 //this will be used to activate functions
