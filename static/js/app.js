@@ -1,7 +1,7 @@
 //json path for data
 const jsonPath = "static/data/samples.json";
 
-//grab the JSON data
+//grab data
 d3.json(jsonPath).then((data) => {
     jsonData = data;
 
